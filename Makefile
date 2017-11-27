@@ -4,7 +4,7 @@ help: ## This help.
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
 .PHONY: final
-final: reset toc ## full document of Arcana for final print
+final: reset toc ## full document of the book for final print
 
 .PHONY: proof
 proof: engage-letter engage-frame engage-draft toc reset ## full proof document of the book with frames and watermark
@@ -13,7 +13,7 @@ proof: engage-letter engage-frame engage-draft toc reset ## full proof document 
 draft: engage-draft toc reset ## draft document of thebook with watermark
 
 .PHONY: plain
-plain: ## full document of Arcana with no proofing marks
+plain: ## full document of the book with no proofing marks
 	xelatex book.tex
 
 .PHONY: toc
