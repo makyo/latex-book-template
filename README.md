@@ -5,7 +5,7 @@ A template for generating a book in LaTeX.
 ## Requirements
 
 * [`pandoc`][pandoc]
-* [`xelatex`][xelatex]
+* `xelatex` (included in TeXLive)
 * `make`
 
 ## Getting started
@@ -52,3 +52,6 @@ The output of this template is deliberately bland, and is intended to be customa
 * Customize page layout (header, footer, etc) in `includes/pagelayout.tex`
 * Set a custom section divider in `includes/secdiv.tex`. This redefines the `\rule` command to be something more appealing. This is optional, though, and the `\input{includes/secdiv}` command in `book.tex` can be removed to restore defaults.
 * Customize your title and pretitle pages in `includes/title.tex` and `includes/pretitle.tex`
+
+[pandoc]: https://pandoc.org
+[calibre]: https://calibre-ebook.com/
