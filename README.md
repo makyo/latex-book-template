@@ -7,6 +7,7 @@ A template for generating a book in LaTeX.
 * [`pandoc`][pandoc]
 * `xelatex` (included in TeXLive)
 * `make`
+* (Optional) [Gentium Plus](https://software.sil.org/gentium/download/) font
 
 ## Getting started
 
