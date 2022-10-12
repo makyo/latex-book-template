@@ -17,13 +17,36 @@
 \begin{document}
   \frontmatter
 
-  \input{includes/pretitle}
+  \thispagestyle{empty}
+  \null
+  \vfill
+  \begin{flushright}
+    \DisplayFont \Title
+    
+    \vspace{1ex}
+
+    {\footnotesize \Subtitle}
+  \end{flushright}
+  \vfill
+  \cleardoublepage
 
   \pagestyle{plain}
 
   \doublespacing
 
-  \maketitle
+  \begin{flushright}
+    \null
+    \vfill
+    {\Huge\DisplayFont \Title}
+
+    \vspace{1ex}
+
+    {\DisplayFont \Subtitle}
+
+    \vfill
+
+    {\Large\DisplayFont \AuthorFull}
+  \end{flushright}
   \thispagestyle{empty}
 
   \newpage
@@ -32,62 +55,27 @@
 
   \tableofcontents*
   \newpage
-  \thispagestyle{empty}
   \null
   \cleardoublepage
 
-  \onehalfspacing
+  %\onehalfspacing
+  %\doublespacing
 
   \input{content/preface}
 
   \mainmatter
 
-  \doublespacing
-
   \pagestyle{ourbook}
+
+  \cleardoublepage
+
+  % Main content goes here
   \input{content/01}
-  \clearpage
-  \input{content/02}
-  \clearpage
-  \input{content/03}
-  \clearpage
-  \input{content/04}
-  \clearpage
-  \input{content/05}
-  \clearpage
-  \input{content/06}
-  \clearpage
-  \input{content/07}
-  \clearpage
-  \input{content/08}
-  \clearpage
-  \input{content/09}
-  \clearpage
-  \input{content/10}
-  \clearpage
-  \input{content/11}
-  \clearpage
-  \input{content/12}
-  \clearpage
-  \input{content/13}
-  \clearpage
-  \input{content/14}
-  \clearpage
-  \input{content/15}
-  \clearpage
-  \input{content/16}
-  \clearpage
-  \input{content/17}
-  \clearpage
-  \input{content/18}
-  \clearpage
-  \input{content/19}
-  \clearpage
-  \input{content/20}
 
   \backmatter
 
-  \onehalfspacing
+  %\part{Afterword}
+  \markboth{}{}
 
   \input{content/afterword}
 

@@ -12,17 +12,24 @@ proof: engage-letter engage-frame engage-draft toc reset ## full proof document 
 .PHONY: draft
 draft: engage-draft toc reset ## draft document of thebook with watermark
 
+.PHONY: fate
+fate: engage-draft
+	xelatex fate.tex
+	xelatex fate.tex
+
 .PHONY: plain
 plain: ## full document of the book with no proofing marks
 	xelatex book.tex
+	fd -I 'aux' content/ -x rm \{\} \;
 
 .PHONY: toc
 toc: plain ## full book with ToC re-rendering in case of page changes
 	xelatex book.tex
+	fd -I 'aux' content/ -x rm \{\} \;
 
 .PHONY: ebook
 ebook: ## render ePub file from LaTeX
-	pandoc Ebook.tex -o ../ebooks/book.epub -t epub3 --wrap=none
+	pandoc book.tex -o ebooks/book.epub -t epub3 --wrap=none
 
 .PHONY: frame
 engage-frame: ## turn on frame marking
@@ -44,8 +51,7 @@ reset: ## reset frame marking, draft watermark, and letter paper
 
 .PHONY: content
 content: ## build the markdown content into LaTeX
-	for in in src/content/*.md; do \
-		out=`echo $$in | sed -e 's/\.md/.tex/' | sed -e 's/.*\///'`; \
-		echo "$$in => $$out"; \
-		pandoc -f markdown -t latex -o content/$$out $$in --wrap=none --top-level-division=chapter; \
-	done
+	@echo "Are you sure you want to do this now?"
+	@echo "Remove the 'false' below to procede"
+	#false
+	fish fromzk.fish
